@@ -63,8 +63,8 @@ const Navbar = () => {
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
             <p className="text-white text-[20px] font-bold cursor-pointer flex">
-              LOHIT&nbsp;
-              <span className="sm:block hidden">KOLLURI</span>
+              adityaaa073&nbsp;
+              
             </p>
           </Link>
           {renderNavLinks(false)}
