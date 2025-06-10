@@ -40,11 +40,7 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a Computer Science student at SRM University and multilingual speaker with a passion
-        for ethical hacking, artificial intelligence, and neural language processing. I am looking
-        to join a company that values innovation, collaboration, and continuous learning and am
-        confident that my enthusiasm and drive will help me succeed in any role that leverages my
-        passion for technology.
+      I am a Computer Science student at Dayananda Sagar College of Engineering, Bengaluru, and a multilingual speaker with a strong passion for product development, artificial intelligence, and neural language processing. I am seeking an opportunity at a company that values innovation, collaboration, and continuous learning. With a deep enthusiasm for technology and a drive to build impactful solutions, I am confident in my ability to thrive in any role that aligns with my interests and skills.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
