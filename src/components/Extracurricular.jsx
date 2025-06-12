@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import { iskcon, mudita } from "../assets";
 
 const ExtracurricularCard = ({ index, title, organization, date, role, description, technologies, icon, iconBg }) => {
   return (
@@ -92,17 +93,17 @@ const Extracurricular = () => {
       role: "Volunteer",
       description: "As a volunteer photographer at ISKCON Bangalore, I capture the essence of temple festivals and events, ensuring each moment reflects the spiritual vibrancy of the celebrations. Through this role, I've refined my photography skills while contributing to the community's visual storytelling.",
       technologies: ["Photography", "Photo Editing", "Event Coverage", "Adobe Photoshop", "Lightroom", "Community Service"],
-      icon: null,
+      icon: iskcon,
       iconBg: "#2563eb"
     },
     {
-      title: "Event Photographer",
+      title: "Team Lead",
       organization: "Mudita",
       date: "Nov 2023 - Present",
       role: "Volunteer",
       description: "I'm an event photographer capturing the heart of Team Mudita's community projects. From events like Valuable Vintage to Pawsitivity, I aim to spread smiles and promote basic ethics through my lens.",
       technologies: ["Event Photography", "Community Projects", "Social Impact", "Visual Storytelling", "Adobe Creative Suite"],
-      icon: null,
+      icon: mudita,
       iconBg: "#d97706"
     }
   ];

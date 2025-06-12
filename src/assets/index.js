@@ -2,6 +2,8 @@
 import mathwork from "./company/mathwork.png";
 import edunet from "./company/edunet.png";
 import eduskill from "./company/eduskill.png";
+import iskcon from "./company/iskcon.jpeg";
+import mudita from "./company/mudita.jpeg";
 
 // Import tech stack images
 import python from "./tech-stack/python.png";
@@ -38,6 +40,9 @@ import close from "./close.svg";
 export {
   mathwork,
   edunet,
+  eduskill,
+  iskcon,
+  mudita,
   python,
   c,
   cpp,
@@ -62,5 +67,4 @@ export {
   logo,
   menu,
   close,
-  eduskill,
 };
