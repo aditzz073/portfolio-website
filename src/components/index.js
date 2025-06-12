@@ -12,6 +12,7 @@ import Tech from "./Tech";
 import Experience from "./Experience";
 import Works from "./Works";
 import Contact from "./Contact";
+import Skills from "./Skills";
 
 export {
   Hero,
@@ -21,6 +22,7 @@ export {
   Experience,
   Works,
   Contact,
+  Skills,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,
