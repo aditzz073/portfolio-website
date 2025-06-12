@@ -206,3 +206,96 @@
 .social-icon.twitter:hover {
   box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
 }
+
+/* Skills Section Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.skills-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.skill-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card-hover:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 20px 25px -5px rgba(139, 92, 246, 0.2),
+    0 10px 10px -5px rgba(139, 92, 246, 0.1);
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.particle-1 {
+  animation: float 3s ease-in-out infinite;
+}
+
+.particle-2 {
+  animation: floatReverse 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.particle-3 {
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.particle-4 {
+  animation: floatReverse 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
