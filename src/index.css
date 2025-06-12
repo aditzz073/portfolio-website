@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -141,4 +143,63 @@
 
 .confirmation {
   color: #00ff00;
+}
+
+/* Custom brand name styling */
+.brand-name {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.02);
+}
+
+/* Modern tech font styling */
+.tech-font {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.mono-font {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+}
+
+/* Social Links Styling */
+.social-icon {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+}
+
+.social-icon.github:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.social-icon.linkedin:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.social-icon.instagram:hover {
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+}
+
+.social-icon.twitter:hover {
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
 }
