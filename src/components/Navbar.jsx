@@ -112,7 +112,6 @@ const Navbar = () => {
                 window.scrollTo(0, 0);
               }}
             >
-              <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
               <p className="brand-name text-[24px] cursor-pointer flex items-center">
                 adityaaa073&nbsp;
               </p>
