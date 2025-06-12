@@ -75,28 +75,6 @@ const Skills = () => {
         <div className="absolute bottom-16 left-20 w-1.5 h-1.5 bg-pink-400 rounded-full animate-pulse opacity-60"></div>
         <div className="absolute bottom-32 right-16 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1s' }}></div>
       </div>
-
-      {/* Programming Languages Highlight */}
-      <motion.div
-        variants={fadeIn("up", "spring", 0.5, 0.75)}
-        className="mt-12"
-      >
-        <h3 className="text-white text-xl font-semibold mb-6 text-center">
-          Core Programming Languages
-        </h3>
-        <div className="flex flex-wrap justify-center gap-4">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              className="px-6 py-3 bg-gradient-to-r from-violet-600/20 to-cyan-600/20 rounded-full border border-violet-500/30"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <span className="text-white font-medium">{service.title}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
     </>
   );
 };

@@ -82,11 +82,11 @@ const Navbar = () => {
             <FaInstagram size={20} />
           </a>
           <a
-            href="#skills"
+            href="#contact"
             className="text-secondary hover:text-white transition-colors duration-300 p-2 hover:bg-gray-800 rounded-full"
-            aria-label="Skills"
+            aria-label="Contact"
             onClick={() => {
-              setActive('Skills');
+              setActive('Contact');
               setToggle(false);
             }}
           >
@@ -156,10 +156,10 @@ const Navbar = () => {
                 <FaInstagram size={20} />
               </a>
               <a
-                href="#skills"
+                href="#contact"
                 className="text-white hover:text-green-400 transition-colors duration-300 p-2 hover:bg-gray-800 rounded-full"
-                aria-label="Skills"
-                onClick={() => setActive('Skills')}
+                aria-label="Contact"
+                onClick={() => setActive('Contact')}
               >
                 <FaEnvelope size={20} />
               </a>
