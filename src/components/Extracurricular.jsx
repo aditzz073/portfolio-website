@@ -16,14 +16,14 @@ const ExtracurricularCard = ({ index, title, organization, date, role, descripti
         {/* Left: Icon/Logo */}
         <div className="flex-shrink-0">
           <div 
-            className="w-16 h-16 rounded-xl flex items-center justify-center border border-gray-700/50"
+            className="w-16 h-16 rounded-xl flex items-center justify-center border border-gray-700/50 overflow-hidden"
             style={{ backgroundColor: iconBg || '#1a1a2e' }}
           >
             {icon ? (
               <img
                 src={icon}
                 alt={organization}
-                className="w-10 h-10 object-contain"
+                className="w-full h-full object-contain"
               />
             ) : (
               <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-lg flex items-center justify-center">
@@ -87,16 +87,6 @@ const Extracurricular = () => {
   // Volunteering and community service activities
   const activities = [
     {
-      title: "Associate Photo Editor",
-      organization: "ISKCON, Bangalore",
-      date: "Jul 2023 - Present",
-      role: "Volunteer",
-      description: "As a volunteer photographer at ISKCON Bangalore, I capture the essence of temple festivals and events, ensuring each moment reflects the spiritual vibrancy of the celebrations. Through this role, I've refined my photography skills while contributing to the community's visual storytelling.",
-      technologies: ["Photography", "Photo Editing", "Event Coverage", "Adobe Photoshop", "Lightroom", "Community Service"],
-      icon: iskcon,
-      iconBg: "#2563eb"
-    },
-    {
       title: "Team Lead",
       organization: "Mudita",
       date: "Nov 2023 - Present",
@@ -105,6 +95,16 @@ const Extracurricular = () => {
       technologies: ["Event Photography", "Community Projects", "Social Impact", "Visual Storytelling", "Adobe Creative Suite"],
       icon: mudita,
       iconBg: "#d97706"
+    },
+    {
+      title: "Associate Photo Editor",
+      organization: "ISKCON, Bangalore",
+      date: "Jul 2023 - Present",
+      role: "Volunteer",
+      description: "As a volunteer photographer at ISKCON Bangalore, I capture the essence of temple festivals and events, ensuring each moment reflects the spiritual vibrancy of the celebrations. Through this role, I've refined my photography skills while contributing to the community's visual storytelling.",
+      technologies: ["Photography", "Photo Editing", "Event Coverage", "Adobe Photoshop", "Lightroom", "Community Service"],
+      icon: iskcon,
+      iconBg: "#2563eb"
     }
   ];
 
