@@ -38,6 +38,7 @@ const Footer = () => {
     { name: "Skills", href: "#skills" },
     { name: "Work", href: "#work" },
     { name: "Projects", href: "#projects" },
+    { name: "Extracurricular", href: "#extracurricular" },
     { name: "Contact", href: "#contact" }
   ];
 
