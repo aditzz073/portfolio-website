@@ -12,8 +12,8 @@ import cpp from "./tech-stack/cpp.png";
 import java from "./tech-stack/java.png";
 
 // Import project images
-import weatherpedia from "./projects/WeatherPedia.png";
-import termpw from "./projects/termpw.png";
+import freesip from "./projects/Freesip.png";
+import embereye from "./projects/embereye.png";
 import payloadmaster from "./projects/payloadmaster.png";
 import mhft from "./projects/mhft.png";
 import sketcher from "./projects/sketcher.png";
@@ -55,11 +55,10 @@ export {
   nodejs,
   reactjs,
   tailwind,
-  threejs,
-  docker,
+  threejs,  docker,
   flask,
-  weatherpedia,
-  termpw,
+  freesip,
+  embereye,
   payloadmaster,
   mhft,
   sketcher,

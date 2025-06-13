@@ -13,8 +13,8 @@ import {
   docker,
   flask,
   edunet,
-  weatherpedia,
-  termpw,
+  freesip,
+  embereye,
   payloadmaster,
   threejs,
   mhft,
@@ -107,17 +107,17 @@ export const experiences = [
 
 export const projects = [
   {
-    name: "WeatherPedia",
+    name: "React-based website for FreeSip",
     description:
       "Web-based platform that allows users to access weather information for their location by entering it in the search field",
     tags: [
       { name: "Javascript", color: "blue-text-gradient" },
-      { name: "HTML", color: "green-text-gradient" },
-      { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "yellow-text-gradient" },
+      { name: "Node", color: "green-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "CSS", color: "green-text-gradient" },
     ],
-    image: weatherpedia,
-    source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+    image: freesip,
+    source_code_link: "https://github.com/aditzz073/FreeSip",
   },
   {
     name: "Terminal Like Portfolio Website",
@@ -128,8 +128,8 @@ export const projects = [
       { name: "css", color: "green-text-gradient" },
       { name: "Javascript", color: "pink-text-gradient" },
     ],
-    image: termpw,
-    source_code_link: "https://github.com/lohitkolluri/lohitkolluri.github.io",
+    image: embereye,
+    source_code_link: "https://github.com/aditzz073/ember-eye",
   },
   {
     name: "Mental Health Fitness Tracker",
