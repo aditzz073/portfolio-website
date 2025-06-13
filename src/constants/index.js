@@ -107,29 +107,33 @@ export const experiences = [
 
 export const projects = [
   {
-    name: "React-based website for FreeSip",
+    name: "FreeSip Website",
     description:
-      "Web-based platform that allows users to access weather information for their location by entering it in the search field",
+      "A modern React-based website for FreeSip, an innovative B2B event marketing solution using branded water bottles as promotional media.",
     tags: [
       { name: "Javascript", color: "blue-text-gradient" },
       { name: "Node", color: "green-text-gradient" },
-      { name: "React", color: "blue-text-gradient" },
+      { name: "React+Vite", color: "blue-text-gradient" },
       { name: "CSS", color: "green-text-gradient" },
     ],
     image: freesip,
     source_code_link: "https://github.com/aditzz073/FreeSip",
+    demo_link: "https://www.freesipindia.xyz/",
   },
   {
-    name: "Terminal Like Portfolio Website",
+    name: "EmberEye: AI-Powered Wildfire Risk Prediction",
     description:
-      "A terminal themed portfolio website that allows users to type into the terminal and use commands like a real terminal.",
+      "It predicts and visualizes wildfire risks based on environmental factors and real-time weather data.",
     tags: [
-      { name: "HTML", color: "blue-text-gradient" },
-      { name: "css", color: "green-text-gradient" },
-      { name: "Javascript", color: "pink-text-gradient" },
+      { name: "Tensorflow", color: "blue-text-gradient" },
+      { name: "CNN", color: "green-text-gradient" },
+      { name: "Fast-API", color: "pink-text-gradient" },
+      { name: "Python", color: "pink-text-gradient" },
     ],
     image: embereye,
     source_code_link: "https://github.com/aditzz073/ember-eye",
+    demo_link: "https://embereye-three.vercel.app/",
+    darkIcons: true,
   },
   {
     name: "Mental Health Fitness Tracker",

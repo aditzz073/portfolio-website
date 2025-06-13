@@ -36,6 +36,7 @@ import logo from "./logo.svg";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import externalLink from "./external-link.svg";
 
 export {
   mathwork,
@@ -61,9 +62,9 @@ export {
   embereye,
   payloadmaster,
   mhft,
-  sketcher,
-  CompileVortex,
+  sketcher,  CompileVortex,
   logo,
   menu,
   close,
+  externalLink,
 };
