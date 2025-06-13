@@ -147,6 +147,8 @@ export const projects = [
     image: trashview,
     source_code_link:
       "https://github.com/aditzz073/Trash-view-on-maps",
+    demo_link: "https://trash-view-on-maps.vercel.app/",
+    darkIcons: true,
   },
   {
     name: "PayloadMaster",
