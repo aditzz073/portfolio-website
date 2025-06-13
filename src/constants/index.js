@@ -17,7 +17,7 @@ import {
   embereye,
   payloadmaster,
   threejs,
-  mhft,
+  trashview,
   sketcher,
   mathwork,
   CompileVortex,
@@ -136,17 +136,17 @@ export const projects = [
     darkIcons: true,
   },
   {
-    name: "Mental Health Fitness Tracker",
+    name: "Trash View On Maps",
     description:
-      "ML model that utilizes regression techniques to provide insights into mental health and make predictions based on the available data.",
+      "An interactive game where players explore random street view locations from top Indian cities and identify whether they see trash.",
     tags: [
-      { name: "Machine Learning", color: "blue-text-gradient" },
-      { name: "Jupyter Notebook", color: "green-text-gradient" },
-      { name: "Regression Algorithms", color: "pink-text-gradient" },
+      { name: "Google Maps API", color: "blue-text-gradient" },
+      { name: "Node.js", color: "green-text-gradient" },
+      { name: "Google Street View API", color: "pink-text-gradient" },
     ],
-    image: mhft,
+    image: trashview,
     source_code_link:
-      "https://github.com/lohitkolluri/mental_health_fitness_tracker",
+      "https://github.com/aditzz073/Trash-view-on-maps",
   },
   {
     name: "PayloadMaster",
