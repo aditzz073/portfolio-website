@@ -133,7 +133,6 @@ export const projects = [
     image: embereye,
     source_code_link: "https://github.com/aditzz073/ember-eye",
     demo_link: "https://embereye-three.vercel.app/",
-    darkIcons: true,
   },
   {
     name: "Trash View On Maps",
@@ -148,7 +147,6 @@ export const projects = [
     source_code_link:
       "https://github.com/aditzz073/Trash-view-on-maps",
     demo_link: "https://trash-view-on-maps.vercel.app/",
-    darkIcons: true,
   },
   {
     name: "PayloadMaster",

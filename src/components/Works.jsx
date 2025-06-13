@@ -29,7 +29,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, demo_li
             <div className="flex flex-col gap-2">
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className={`${darkIcons ? '' : 'black-gradient'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer`}
+                className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform`}
               >
                 <img 
                   src={github} 
@@ -41,7 +41,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, demo_li
               {demo_link && (
                 <div
                   onClick={() => window.open(demo_link, "_blank")}
-                  className={`${darkIcons ? '' : 'black-gradient opacity-80 hover:opacity-100'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-opacity`}
+                  className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all hover:scale-110`}
                 >
                   <img 
                     src={externalLink} 
