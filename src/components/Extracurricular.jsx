@@ -10,10 +10,10 @@ const ExtracurricularCard = ({ index, title, organization, date, role, descripti
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.1, 0.75)}
-      className="bg-tertiary p-6 rounded-2xl border border-gray-800/30 hover:border-violet-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-violet-500/10"
+      className="bg-tertiary p-6 rounded-2xl border border-gray-800/30 hover:border-violet-500/50 transition-all duration-300 group hover:shadow-lg hover:shadow-violet-500/10 h-full flex flex-col"
     >
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Left: Icon/Logo */}
+      {/* Header with icon and basic info */}
+      <div className="flex items-start gap-4 mb-4">
         <div className="flex-shrink-0">
           <div 
             className="w-16 h-16 rounded-xl flex items-center justify-center border border-gray-700/50 overflow-hidden"
@@ -34,51 +34,45 @@ const ExtracurricularCard = ({ index, title, organization, date, role, descripti
             )}
           </div>
         </div>
-
-        {/* Right: Content */}
+        
         <div className="flex-1 min-w-0">
-          {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 mb-4">
-            <div className="flex-1">
-              <h3 className="text-white text-xl font-bold mb-1 group-hover:text-violet-400 transition-colors duration-300">
-                {title}
-              </h3>
-              <p className="text-blue-400 text-base font-medium hover:text-blue-300 transition-colors cursor-pointer">
-                {organization}
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-gray-400 text-sm font-medium mb-1">
-                {date}
-              </p>
-              {role && (
-                <span className="inline-block px-3 py-1 bg-violet-600/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30">
-                  {role}
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Description */}
-          <p className="text-gray-300 text-sm leading-relaxed mb-4">
-            {description}
+          <h3 className="text-white text-xl font-bold mb-1 group-hover:text-violet-400 transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="text-blue-400 text-base font-medium hover:text-blue-300 transition-colors cursor-pointer">
+            {organization}
           </p>
-
-          {/* Technology Tags */}
-          {technologies && technologies.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, i) => (
-                <span
-                  key={`tech-${i}`}
-                  className="px-3 py-1 bg-gray-800/50 text-gray-300 text-xs font-medium rounded-full border border-gray-700/50 hover:border-violet-500/50 hover:text-violet-300 transition-all duration-200"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
+          <div className="flex items-center gap-2 mt-2">
+            <p className="text-gray-400 text-sm font-medium">
+              {date}
+            </p>
+            {role && (
+              <span className="inline-block px-2 py-1 bg-violet-600/20 text-violet-300 text-xs font-medium rounded-full border border-violet-500/30">
+                {role}
+              </span>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* Description */}
+      <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-1">
+        {description}
+      </p>
+
+      {/* Technology Tags */}
+      {technologies && technologies.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {technologies.map((tech, i) => (
+            <span
+              key={`tech-${i}`}
+              className="px-3 py-1 bg-gray-800/50 text-gray-300 text-xs font-medium rounded-full border border-gray-700/50 hover:border-violet-500/50 hover:text-violet-300 transition-all duration-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
     </motion.div>
   );
 };
@@ -119,12 +113,11 @@ const Extracurricular = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        My journey includes contributions to open source projects, professional internships, 
-        and collaborative development experiences that have shaped my technical expertise 
-        and professional growth.
+        Beyond coding, I actively contribute to community initiatives through photography and volunteer work, 
+        capturing meaningful moments and promoting social impact through various organizations.
       </motion.p>
 
-      <div className="mt-20 space-y-6">
+      <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {activities.map((activity, index) => (
           <ExtracurricularCard
             key={`activity-${index}`}
