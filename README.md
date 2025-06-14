@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Portfolio%20Website%20V2&fontSize=80&animation=fadeIn&fontAlignY=35)
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=0:050816,30:151030,70:804dee,100:915EFF&height=200&section=header&text=Aditya%27s%20Portfolio&fontSize=70&fontColor=f3f3f3&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20AI%20Enthusiast%20%7C%20Photographer&descAlignY=55&descSize=20)
 
 <p align="center">
   <a href="#features">Features</a> •
@@ -10,8 +10,8 @@
   <a href="#tech-stack">Tech Stack</a>
 </p>
 
-[![GitHub license](https://img.shields.io/github/license/lohitkolluri/Portfolio?style=flat-square)](LICENSE)
-[![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fportfolio-lohit.vercel.app)](https://portfolio-lohit.vercel.app)
+[![GitHub license](https://img.shields.io/github/license/aditzz073/Portfolio?style=flat-square)](LICENSE)
+[![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fportfolio-aditya.vercel.app)](https://portfolio-aditya.vercel.app)
 [![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=flat-square&logo=react)](https://reactjs.org)
 
 <p align="center">A modern, responsive portfolio website showcasing professional experience, projects, and skills. Built with React, Vite, and Tailwind CSS, featuring smooth animations and interactive 3D elements. ✨</p>
@@ -47,14 +47,14 @@ mindmap
 
 ## 🚀 Demo
 
-Experience the live portfolio at [https://portfolio-lohit.vercel.app](https://portfolio-aditya.vercel.app)
+Experience the live portfolio at [https://portfolio-aditya.vercel.app](https://portfolio-aditya.vercel.app)
 
 ## 🛠️ Installation
 
 1️⃣ Clone the repository:
 
 ```bash
-git clone https://github.com/lohitkolluri/Portfolio-Website
+git clone https://github.com/aditzz073/Portfolio-Website
 ```
 
 2️⃣ Navigate to project directory:
@@ -130,7 +130,7 @@ npm run dev
 
 <div align="center">
 
-MIT License © [Lohit Kolluri](LICENSE)
+MIT License © [Aditya](LICENSE)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%"/>
 

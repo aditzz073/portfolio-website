@@ -172,7 +172,7 @@ export const projects = [
       { name: "HTML", color: "pink-text-gradient" },
     ],
     image: CompileVortex,
-    source_code_link: "https://github.com/lohitkolluri/CompileVortex",
+    source_code_link: "https://github.com/aditzz073/CompileVortex",
   },
   {
     name: "Sketcher",
@@ -185,6 +185,6 @@ export const projects = [
     ],
 
     image: sketcher,
-    source_code_link: "https://github.com/lohitkolluri/Image_to_Pencil_Sketch_App",
+    source_code_link: "https://github.com/aditzz073/Image_to_Pencil_Sketch_App",
   },
 ];
