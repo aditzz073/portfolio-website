@@ -14,7 +14,7 @@ import java from "./tech-stack/java.png";
 // Import project images
 import freesip from "./projects/Freesip.png";
 import embereye from "./projects/embereye.png";
-import payloadmaster from "./projects/payloadmaster.png";
+import kisansetu from "./projects/kisansetu.png";
 import trashview from "./projects/trashview.png";
 import sketcher from "./projects/sketcher.png";
 import CompileVortex from "./projects/CompileVortex.png";
@@ -56,12 +56,15 @@ export {
   nodejs,
   reactjs,
   tailwind,
-  threejs,  docker,
-  flask,  freesip,
+  threejs,
+  docker,
+  flask,
+  freesip,
   embereye,
-  payloadmaster,
+  kisansetu,
   trashview,
-  sketcher,CompileVortex,
+  sketcher,
+  CompileVortex,
   logo,
   menu,
   close,

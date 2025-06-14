@@ -15,7 +15,7 @@ import {
   edunet,
   freesip,
   embereye,
-  payloadmaster,
+  kisansetu,
   threejs,
   trashview,
   sketcher,
@@ -149,14 +149,18 @@ export const projects = [
     demo_link: "https://trash-view-on-maps.vercel.app/",
   },
   {
-    name: "PayloadMaster",
+    name: "Kisansetu",
     description:
-      "Tool to automate payload creation using the Metasploit framework",
+      "A platform designed to facilitate assured contract farming agreements between farmers and buyers.",
     tags: [
-      { name: "shell", color: "blue-text-gradient" },
+      { name: "Firebase", color: "blue-text-gradient" },
+      { name: "Solidity", color: "green-text-gradient" },
+      { name: "Metamask", color: "pink-text-gradient" },
+      { name: "Zetachain", color: "blue-text-gradient" },
+      { name: "Docker", color: "green-text-gradient" },
     ],
-    image: payloadmaster,
-    source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
+    image: kisansetu,
+    source_code_link: "https://github.com/slashexx/kisansetu",
   },
   {
     name: "CompileVortex",
