@@ -4,6 +4,7 @@ import edunet from "./company/edunet.png";
 import eduskill from "./company/eduskill.png";
 import iskcon from "./company/iskcon.jpeg";
 import mudita from "./company/mudita.jpeg";
+import genesis from "./company/genesis.png";
 
 // Import tech stack images
 import python from "./tech-stack/python.png";
@@ -44,6 +45,7 @@ export {
   eduskill,
   iskcon,
   mudita,
+  genesis,
   python,
   c,
   cpp,
