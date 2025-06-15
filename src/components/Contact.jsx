@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -34,6 +34,11 @@ const Contact = () => {
   const [nameError, setNameError] = useState("");
   const [confirmation, setConfirmation] = useState("");
 
+  // Initialize EmailJS with the public key
+  useEffect(() => {
+    emailjs.init("2LVJHRMyptKX8-l91");
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -68,19 +73,19 @@ const Contact = () => {
     emailjs
       .send(
         "service_jv7uy69",
-        "template_addkke4",
+        "template_bbhtzaq",
         {
           from_name: form.name,
           to_name: "Aditya",
           from_email: form.email,
           to_email: "pujeradi@gmail.com",
           message: form.message,
-        },
-        "2LVJHRMyptKX8-l91"
+        }
       )
       .then(
-        () => {
+        (response) => {
           setLoading(false);
+          console.log("Email sent successfully:", response);
           setConfirmation("Thank you! I will get back to you as soon as possible.");
 
           setForm({
@@ -92,8 +97,18 @@ const Contact = () => {
       )
       .catch((error) => {
         setLoading(false);
-        console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
+        console.error("EmailJS Error:", error);
+        
+        // More specific error handling
+        if (error.status === 422) {
+          setConfirmation("Invalid email address. Please check and try again.");
+        } else if (error.status === 400) {
+          setConfirmation("Bad request. Please check all fields and try again.");
+        } else if (error.text) {
+          setConfirmation(`Error: ${error.text}`);
+        } else {
+          setConfirmation("Something went wrong. Please try again or contact me at pujeradi@gmail.com");
+        }
       });
   };
 
@@ -139,6 +154,7 @@ const Contact = () => {
           >
             {loading ? "Sending..." : "Send"}
           </button>
+
           {confirmation && <p className="text-green-500">{confirmation}</p>}
         </form>
       </motion.div>
