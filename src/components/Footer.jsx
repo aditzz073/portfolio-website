@@ -27,8 +27,8 @@ const Footer = () => {
     },
     {
       icon: FaEnvelope,
-      url: "#contact",
-      label: "Contact",
+      url: "mailto:pujeradi@gmail.com",
+      label: "Email",
       color: "hover:text-green-400"
     }
   ];
@@ -106,6 +106,12 @@ const Footer = () => {
             <p className="text-secondary text-sm">
               Feel free to reach out for collaborations or just a friendly hello!
             </p>
+            <div className="flex items-center gap-2 text-blue-400 text-sm font-medium">
+              <FaEnvelope className="text-green-400" />
+              <a href="mailto:pujeradi@gmail.com" className="hover:text-blue-300 transition-colors">
+                pujeradi@gmail.com
+              </a>
+            </div>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <motion.a
