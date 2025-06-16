@@ -14,6 +14,7 @@ import {
   flask,
   edunet,
   freesip,
+  freesiplogo,
   embereye,
   kisansetu,
   threejs,
@@ -69,11 +70,11 @@ export const technologies = [
 
 export const experiences = [
   {
-    title: "AI/ML Intern",
-    company_name: "EduSkill Foundation | AWS Academy | AICTE",
-    icon: eduskill,
+    title: "Web Development Intern",
+    company_name: "FreeSip India",
+    icon: freesiplogo,
     iconBg: "#161329",
-    date: "Sep 2023 - Nov 2023",
+    date: "Jan 2025 - May 2025",
     points: [
       "Acquired hands-on knowledge of AWS Cloud Foundation, delving into cloud infrastructure, services, and deployment.",
       "also gaining a solid foundation in Machine Learning, covering topics like algorithms, data analysis, and model building.",
