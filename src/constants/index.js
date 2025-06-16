@@ -20,9 +20,7 @@ import {
   threejs,
   trashview,
   sketcher,
-  mathwork,
   CompileVortex,
-  eduskill,
 } from "../assets";
 
 export const navLinks = [

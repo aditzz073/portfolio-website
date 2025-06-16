@@ -1,7 +1,5 @@
 // Import company logos
-import mathwork from "./company/mathwork.png";
 import edunet from "./company/edunet.png";
-import eduskill from "./company/eduskill.png";
 import iskcon from "./company/iskcon.jpeg";
 import mudita from "./company/mudita.jpeg";
 import genesis from "./company/genesis.png";
@@ -41,9 +39,7 @@ import close from "./close.svg";
 import externalLink from "./external-link.svg";
 
 export {
-  mathwork,
   edunet,
-  eduskill,
   iskcon,
   mudita,
   genesis,
