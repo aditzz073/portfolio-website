@@ -76,34 +76,35 @@ export const experiences = [
     iconBg: "#161329",
     date: "Jan 2025 - May 2025",
     points: [
-      "Acquired hands-on knowledge of AWS Cloud Foundation, delving into cloud infrastructure, services, and deployment.",
-      "also gaining a solid foundation in Machine Learning, covering topics like algorithms, data analysis, and model building.",
+      "Completed web development internship at FreeSip, gaining a strong foundation in React ecosystem, including component architecture and state management.",
+      "Acquired practical skills in modern web technologies, including Vite bundling, Framer Motion animations, and responsive design implementation.",
+      "Developed expertise in full-stack development workflows for B2B marketing platforms, and customized user experience techniques for interactive promotional websites.",
     ],
   },
-  {
-    title: "Mathwork Ai Virtual Intern",
-    company_name: "Mathwork | AICTE",
-    icon: mathwork,
-    iconBg: "#161329",
-    date: "May 2023 - Sep 2023",
-    points: [
-      "Completed virtual internship, gaining a strong foundation in MATLAB, including data analysis and processing.",
-      "Acquired practical skills in image and signal processing, including segmentation, batch processing, and spectral analysis.",
-      "Developed expertise in machine learning models for clustering, classification, and regression, and customized deep learning techniques for image classification.",
-    ],
-  },
-  {
-    title: "Artificial Intelligence Intern",
-    company_name: "Edunet Foundation | IBM SkillsBuild | AICTE",
-    icon: edunet,
-    iconBg: "#161329",
-    date: "June 2023 - July 2023",
-    points: [
-      "Engineered a comprehensive Mental Health Fitness Tracker ML model utilizing Python and scikit-learn.",
-      "Maximized the model's performance by refining model parameters and employing ensemble methods, yielding an outstanding accuracy percentage of 98.50%.",
-      "Leveraged 12 regression algorithms to attain precise outcomes in analyzing and predicting mental fitness levels across 150+ countries.",
-    ],
-  },
+  // {
+  //   title: "Mathwork Ai Virtual Intern",
+  //   company_name: "Mathwork | AICTE",
+  //   icon: mathwork,
+  //   iconBg: "#161329",
+  //   date: "May 2023 - Sep 2023",
+  //   points: [
+  //     "Completed virtual internship, gaining a strong foundation in MATLAB, including data analysis and processing.",
+  //     "Acquired practical skills in image and signal processing, including segmentation, batch processing, and spectral analysis.",
+  //     "Developed expertise in machine learning models for clustering, classification, and regression, and customized deep learning techniques for image classification.",
+  //   ],
+  // },
+  // {
+  //   title: "Artificial Intelligence Intern",
+  //   company_name: "Edunet Foundation | IBM SkillsBuild | AICTE",
+  //   icon: edunet,
+  //   iconBg: "#161329",
+  //   date: "June 2023 - July 2023",
+  //   points: [
+  //     "Engineered a comprehensive Mental Health Fitness Tracker ML model utilizing Python and scikit-learn.",
+  //     "Maximized the model's performance by refining model parameters and employing ensemble methods, yielding an outstanding accuracy percentage of 98.50%.",
+  //     "Leveraged 12 regression algorithms to attain precise outcomes in analyzing and predicting mental fitness levels across 150+ countries.",
+  //   ],
+  // },
 ];
 
 export const projects = [
