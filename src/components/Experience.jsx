@@ -19,8 +19,8 @@ const ExperienceCard = ({ experience, index }) => (
     {/* Timeline circle - smaller and more subtle */}
     <div className="absolute left-3.5 top-6 w-3 h-3 rounded-full bg-[#915EFF] z-10 shadow-sm"></div>
     
-    {/* Experience card - more compact */}
-    <div className="ml-12 bg-tertiary/80 rounded-[12px] p-5 border border-[#232631]/50 hover:border-[#915EFF]/30 transition-all duration-300 hover:shadow-md hover:shadow-[#915EFF]/10">
+    {/* Experience card - glass effect */}
+    <div className="ml-12 bg-white/5 backdrop-blur-md rounded-[12px] p-5 border border-white/10 hover:border-[#915EFF]/30 transition-all duration-300 hover:shadow-md hover:shadow-[#915EFF]/10 hover:bg-white/8">
       
       {/* Header - more compact */}
       <div className="flex justify-between items-start mb-4">
