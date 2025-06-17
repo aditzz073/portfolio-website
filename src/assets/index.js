@@ -28,6 +28,7 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.png";
+import mysql from "./tech/mysql.svg";
 import docker from "./tech/docker.svg";
 import flask from "./tech/flask.svg";
 
@@ -57,6 +58,7 @@ export {
   reactjs,
   tailwind,
   threejs,
+  mysql,
   docker,
   flask,
   freesip,
