@@ -99,11 +99,13 @@
 }
 
 .stars-canvas-container {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
+  pointer-events: none;
 }
 
 /* global.css */

@@ -35,7 +35,10 @@ const Stars = () => {
 
 const StarsCanvas = () => (
   <div className="stars-canvas-container">
-    <Canvas camera={{ position: [0, 0, 1] }}>
+    <Canvas 
+      camera={{ position: [0, 0, 1] }}
+      style={{ width: '100vw', height: '100vh' }}
+    >
       <Suspense fallback={null}>
         <Stars />
       </Suspense>

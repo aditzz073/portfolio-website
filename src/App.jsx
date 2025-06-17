@@ -11,20 +11,25 @@ const App = () => {
       }}
     >
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Skills />
-        <Experience />
-        <Works />
-        <Extracurricular />
-        <div className="relative z-0">
-          <Contact />
+        {/* Global starry background */}
+        <div className="fixed inset-0 z-0">
           <StarsCanvas />
         </div>
-        <Footer />
+        
+        {/* Main content with higher z-index */}
+        <div className="relative z-10">
+          <div>
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Skills />
+          <Experience />
+          <Works />
+          <Extracurricular />
+          <Contact />
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );
