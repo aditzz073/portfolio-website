@@ -106,6 +106,7 @@
   left: 0;
   z-index: -1;
   pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(9, 3, 37, 0.8) 0%, rgba(5, 8, 22, 0.9) 40%, rgba(0, 0, 0, 1) 100%);
 }
 
 /* global.css */
