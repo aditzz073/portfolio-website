@@ -1,10 +1,11 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader";
 import CanvasLoader from "../Loader";
 
 const ComputerModel = ({ isMobile }) => {
+  const meshRef = useRef();
   const { scene } = useGLTF(
     "./desktop_pc/scene.gltf",
     undefined,
@@ -12,10 +13,15 @@ const ComputerModel = ({ isMobile }) => {
       const dracoLoader = new DRACOLoader();
       loader.setDRACOLoader(dracoLoader);
     }
-  );
+  );  // Floating animation
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.1 + (isMobile ? -2.1 : -0.25);
+    }
+  });
 
   return (
-    <mesh>
+    <mesh ref={meshRef}>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
@@ -54,10 +60,9 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
-
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
