@@ -2,11 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import GitHubStatus from "./GitHubStatus";
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
+      {/* GitHub Status - Top Right */}
+      <div className="absolute top-20 right-4 z-10 hidden lg:block">
+        <GitHubStatus />
+      </div>
+
+      {/* Mobile GitHub Status - Below header */}
+      <div className="absolute top-32 left-4 right-4 z-10 lg:hidden">
+        <GitHubStatus />
+      </div>
+
       <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />

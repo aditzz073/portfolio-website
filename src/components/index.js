@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import Skills from "./Skills";
 import Footer from "./Footer";
 import Extracurricular from "./Extracurricular";
+import GitHubStatus from "./GitHubStatus";
 
 export {
   Hero,
@@ -23,6 +24,7 @@ export {
   Skills,
   Footer,
   Extracurricular,
+  GitHubStatus,
   ComputersCanvas,
   StarsCanvas,
 };
