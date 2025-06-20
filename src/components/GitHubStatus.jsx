@@ -273,11 +273,7 @@ const GitHubStatus = () => {
           ></motion.div>
         </div>
         <div className="flex-1 text-center">
-          <span className="text-gray-300 text-xs">github-status — zsh — 33×17</span>
-        </div>
-        <div className="flex gap-1">
-          <div className="w-3 h-2 bg-gray-600 rounded-sm"></div>
-          <div className="w-3 h-2 bg-gray-600 rounded-sm"></div>
+          <span className="text-gray-300 text-xs">github-status — zsh — 33x17</span>
         </div>
       </div>
       
