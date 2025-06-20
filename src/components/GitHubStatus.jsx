@@ -13,6 +13,134 @@ const GitHubStatus = () => {
     lastUpdated: null
   });
 
+  const [terminalState, setTerminalState] = useState({
+    isInteractive: false,
+    currentInput: '',
+    commandHistory: [],
+    showHelp: false
+  });
+
+  const commandHistoryRef = React.useRef(null);
+
+  // Auto-scroll to bottom when new commands are added
+  React.useEffect(() => {
+    if (commandHistoryRef.current) {
+      commandHistoryRef.current.scrollTop = commandHistoryRef.current.scrollHeight;
+    }
+  }, [terminalState.commandHistory, terminalState.showHelp]);
+
+  const commands = {
+    'help': {
+      description: 'Show available commands',
+      action: () => setTerminalState(prev => ({ ...prev, showHelp: true }))
+    },
+    'about': {
+      description: 'About Aditya',
+      action: () => {
+        const element = document.getElementById('about');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'projects': {
+      description: 'View my projects',
+      action: () => {
+        const element = document.getElementById('projects');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'skills': {
+      description: 'My technical skills',
+      action: () => {
+        const element = document.getElementById('skills');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'work': {
+      description: 'My work experience',
+      action: () => {
+        const element = document.getElementById('work');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'extracurricular': {
+      description: 'My extracurricular activities',
+      action: () => {
+        const element = document.getElementById('extracurricular');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'contact': {
+      description: 'Get in touch',
+      action: () => {
+        const element = document.getElementById('contact');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    },
+    'resume': {
+      description: 'Download my resume',
+      action: () => window.open('/Resume.pdf', '_blank')
+    },
+    'github': {
+      description: 'Visit my GitHub profile',
+      action: () => window.open(`https://github.com/${GITHUB_CONFIG.username}`, '_blank')
+    },
+    'clear': {
+      description: 'Clear terminal',
+      action: () => setTerminalState(prev => ({ ...prev, commandHistory: [], showHelp: false }))
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const command = terminalState.currentInput.trim().toLowerCase();
+      const newHistory = [...terminalState.commandHistory, { command, timestamp: new Date() }];
+      
+      if (commands[command]) {
+        commands[command].action();
+        setTerminalState(prev => ({
+          ...prev,
+          currentInput: '',
+          commandHistory: newHistory
+        }));
+      } else if (command) {
+        setTerminalState(prev => ({
+          ...prev,
+          currentInput: '',
+          commandHistory: [...newHistory, { error: `Command '${command}' not found. Type 'help' for available commands.` }],
+          showHelp: false
+        }));
+      } else {
+        // Empty command, just add to history
+        setTerminalState(prev => ({
+          ...prev,
+          currentInput: '',
+          commandHistory: newHistory
+        }));
+      }
+    }
+  };
+
+  const toggleInteractive = () => {
+    setTerminalState(prev => ({ 
+      ...prev, 
+      isInteractive: !prev.isInteractive,
+      currentInput: '',
+      showHelp: false
+    }));
+  };
+
   useEffect(() => {
     const fetchGitHubData = async () => {
       try {
@@ -212,7 +340,7 @@ const GitHubStatus = () => {
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden"
+        className="fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden z-40"
       >
         {/* Terminal Header */}
         <div className="bg-gray-800 border-b border-gray-700 px-3 py-1.5 flex items-center gap-2">
@@ -254,7 +382,7 @@ const GitHubStatus = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden"
+      className="fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden max-h-[400px] flex flex-col z-40"
     >
       {/* Terminal Header */}
       <div className="bg-gray-800 border-b border-gray-700 px-3 py-1.5 flex items-center gap-2">
@@ -278,140 +406,237 @@ const GitHubStatus = () => {
       </div>
       
       {/* Terminal Content */}
-      <div className="p-3 bg-black text-green-400 text-xs leading-tight">
-        {/* Command Prompt */}
-        <div className="flex items-center gap-1 mb-2">
-          <span className="text-blue-400">aditya@github</span>
-          <span className="text-white">:</span>
-          <span className="text-purple-400">~/dev</span>
-          <span className="text-white">$</span>
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-green-400"
-          >
-            git status --live
-          </motion.span>
-        </div>
+      <div className="p-3 bg-black text-green-400 text-xs leading-tight flex-1 overflow-y-auto min-h-0 overflow-x-hidden">
+        {!terminalState.isInteractive ? (
+          // Default GitHub Status View
+          <>
+            {/* Command Prompt */}
+            <div className="flex items-center gap-1 mb-2">
+              <span className="text-blue-400">aditya@github</span>
+              <span className="text-white">:</span>
+              <span className="text-purple-400">~/dev</span>
+              <span className="text-white">$</span>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-green-400"
+              >
+                git status --live
+              </motion.span>
+            </div>
 
-        {/* Error Display */}
-        {githubData.error && (
-          <motion.div 
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="mb-2 text-red-400"
-          >
-            <span className="text-red-500">error:</span> Connection failed
-          </motion.div>
+            {/* Error Display */}
+            {githubData.error && (
+              <motion.div 
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="mb-2 text-red-400"
+              >
+                <span className="text-red-500">error:</span> Connection failed
+              </motion.div>
+            )}
+
+            {/* Live Status Indicator */}
+            <div className="flex items-center gap-1.5 mb-2">
+              <motion.div 
+                animate={{ 
+                  opacity: [0.5, 1, 0.5],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className={`w-1.5 h-1.5 rounded-full ${githubData.error ? 'bg-red-500' : 'bg-green-400'}`}
+              ></motion.div>
+              <span className={`${githubData.error ? 'text-red-400' : 'text-green-400'}`}>
+                {githubData.error ? 'OFFLINE' : 'LIVE_ACTIVE'}
+              </span>
+            </div>
+
+            {/* Current Repository */}
+            <div className="mb-1">
+              <span className="text-yellow-400">On branch</span>
+              <span className="text-white"> main</span>
+            </div>
+            
+            <div className="mb-2">
+              <span className="text-cyan-400">Working on:</span>
+              <motion.div
+                key={githubData.currentRepo}
+                initial={{ x: 5, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                className="text-white bg-gray-900 px-1.5 py-0.5 rounded mt-0.5 border-l border-purple-500 truncate"
+              >
+                → {githubData.currentRepo}
+              </motion.div>
+            </div>
+
+            {/* Compact Stats */}
+            <div className="space-y-1 mb-2">
+              <div className="flex justify-between">
+                <span className="text-blue-400">Commits today:</span>
+                <motion.span 
+                  key={githubData.commitsToday}
+                  initial={{ color: '#60A5FA', scale: 1.1 }}
+                  animate={{ color: '#60A5FA', scale: 1 }}
+                  className="text-blue-400 font-bold"
+                >
+                  {githubData.commitsToday}
+                </motion.span>
+              </div>
+              
+              <div className="flex justify-between">
+                <span className="text-orange-400">Streak:</span>
+                <motion.span 
+                  key={githubData.currentStreak}
+                  initial={{ color: '#FB923C', scale: 1.1 }}
+                  animate={{ color: '#FB923C', scale: 1 }}
+                  className="text-orange-400 font-bold"
+                >
+                  {githubData.currentStreak}d
+                </motion.span>
+              </div>
+            </div>
+
+            {/* Compact Actions */}
+            <div className="mb-2">
+              <motion.a
+                href={`https://github.com/${GITHUB_CONFIG.username}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 2 }}
+                className="text-green-400 hover:text-green-300 cursor-pointer"
+              >
+                <span className="text-white">→</span> open profile
+              </motion.a>
+            </div>
+
+            {/* Interactive Mode Toggle */}
+            <div className="mb-2">
+              <motion.button
+                onClick={toggleInteractive}
+                whileHover={{ x: 2 }}
+                className="text-cyan-400 hover:text-cyan-300 cursor-pointer"
+              >
+                <span className="text-white">→</span> explore website
+              </motion.button>
+            </div>
+          </>
+        ) : (
+          // Interactive Command Interface
+          <div className="flex flex-col h-full">
+            {/* Command History - Scrollable Area */}
+            <div 
+              ref={commandHistoryRef}
+              className="flex-1 overflow-y-auto mb-2 max-h-[200px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden"
+            >
+              {terminalState.commandHistory.map((entry, index) => (
+                <div key={index} className="mb-1 break-words">
+                  {entry.command && (
+                    <div className="flex items-start gap-1 flex-wrap">
+                      <div className="flex items-center gap-1 flex-shrink-0">
+                        <span className="text-blue-400">aditya@portfolio</span>
+                        <span className="text-white">:</span>
+                        <span className="text-purple-400">~</span>
+                        <span className="text-white">$</span>
+                      </div>
+                      <span className="text-green-400 break-all">{entry.command}</span>
+                    </div>
+                  )}
+                  {entry.error && (
+                    <div className="text-red-400 ml-4 break-words whitespace-pre-wrap">{entry.error}</div>
+                  )}
+                </div>
+              ))}
+
+              {/* Help Menu */}
+              {terminalState.showHelp && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-2 p-2 bg-gray-900 rounded border-l-2 border-cyan-400 overflow-hidden"
+                >
+                  <div className="text-cyan-400 mb-1 text-xs font-bold">Available commands:</div>
+                  {Object.entries(commands).map(([cmd, info]) => (
+                    <div key={cmd} className="text-gray-300 text-xs mb-0.5 break-words">
+                      <span className="text-green-400 font-medium">{cmd}</span>
+                      <span className="text-gray-500"> - </span>
+                      <span className="break-words">{info.description}</span>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
+            {/* Fixed Input Area */}
+            <div className="border-t border-gray-800 pt-2">
+              {/* Command Input */}
+              <div className="flex items-center gap-1 mb-2">
+                <div className="flex items-center gap-1 flex-shrink-0">
+                  <span className="text-blue-400">aditya@portfolio</span>
+                  <span className="text-white">:</span>
+                  <span className="text-purple-400">~</span>
+                  <span className="text-white">$</span>
+                </div>
+                <input
+                  type="text"
+                  value={terminalState.currentInput}
+                  onChange={(e) => setTerminalState(prev => ({ ...prev, currentInput: e.target.value }))}
+                  onKeyPress={handleKeyPress}
+                  className="bg-transparent text-green-400 outline-none flex-1 font-mono text-xs min-w-0"
+                  placeholder="Type 'help'..."
+                  autoFocus
+                />
+              </div>
+
+              {/* Back to Status */}
+              <motion.button
+                onClick={toggleInteractive}
+                whileHover={{ x: 2 }}
+                className="text-yellow-400 hover:text-yellow-300 cursor-pointer"
+              >
+                <span className="text-white">←</span> back to git status
+              </motion.button>
+            </div>
+          </div>
         )}
 
-        {/* Live Status Indicator */}
-        <div className="flex items-center gap-1.5 mb-2">
-          <motion.div 
-            animate={{ 
-              opacity: [0.5, 1, 0.5],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className={`w-1.5 h-1.5 rounded-full ${githubData.error ? 'bg-red-500' : 'bg-green-400'}`}
-          ></motion.div>
-          <span className={`${githubData.error ? 'text-red-400' : 'text-green-400'}`}>
-            {githubData.error ? 'OFFLINE' : 'LIVE_ACTIVE'}
-          </span>
-        </div>
+        {!terminalState.isInteractive && (
+          <>
+            {/* Compact Last Update */}
+            <div className="pt-1 border-t border-gray-800">
+              <div className="flex items-center gap-1 text-gray-500">
+                <motion.span 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="text-xs"
+                >
+                  ⟳
+                </motion.span>
+                <span className="text-xs">
+                  {githubData.lastUpdated && 
+                    githubData.lastUpdated.toLocaleTimeString([], { 
+                      hour: '2-digit', 
+                      minute: '2-digit'
+                    })
+                  }
+                </span>
+              </div>
+            </div>
 
-        {/* Current Repository */}
-        <div className="mb-1">
-          <span className="text-yellow-400">On branch</span>
-          <span className="text-white"> main</span>
-        </div>
-        
-        <div className="mb-2">
-          <span className="text-cyan-400">Working on:</span>
-          <motion.div
-            key={githubData.currentRepo}
-            initial={{ x: 5, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            className="text-white bg-gray-900 px-1.5 py-0.5 rounded mt-0.5 border-l border-purple-500 truncate"
-          >
-            → {githubData.currentRepo}
-          </motion.div>
-        </div>
-
-        {/* Compact Stats */}
-        <div className="space-y-1 mb-2">
-          <div className="flex justify-between">
-            <span className="text-blue-400">Commits today:</span>
-            <motion.span 
-              key={githubData.commitsToday}
-              initial={{ color: '#60A5FA', scale: 1.1 }}
-              animate={{ color: '#60A5FA', scale: 1 }}
-              className="text-blue-400 font-bold"
-            >
-              {githubData.commitsToday}
-            </motion.span>
-          </div>
-          
-          <div className="flex justify-between">
-            <span className="text-orange-400">Streak:</span>
-            <motion.span 
-              key={githubData.currentStreak}
-              initial={{ color: '#FB923C', scale: 1.1 }}
-              animate={{ color: '#FB923C', scale: 1 }}
-              className="text-orange-400 font-bold"
-            >
-              {githubData.currentStreak}d
-            </motion.span>
-          </div>
-        </div>
-
-        {/* Compact Actions */}
-        <div className="mb-2">
-          <motion.a
-            href={`https://github.com/${GITHUB_CONFIG.username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ x: 2 }}
-            className="text-green-400 hover:text-green-300 cursor-pointer"
-          >
-            <span className="text-white">→</span> open profile
-          </motion.a>
-        </div>
-
-        {/* Compact Last Update */}
-        <div className="pt-1 border-t border-gray-800">
-          <div className="flex items-center gap-1 text-gray-500">
-            <motion.span 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="text-xs"
-            >
-              ⟳
-            </motion.span>
-            <span className="text-xs">
-              {githubData.lastUpdated && 
-                githubData.lastUpdated.toLocaleTimeString([], { 
-                  hour: '2-digit', 
-                  minute: '2-digit'
-                })
-              }
-            </span>
-          </div>
-        </div>
-
-        {/* Cursor */}
-        <div className="flex items-center gap-1 mt-1">
-          <span className="text-blue-400">aditya@github</span>
-          <span className="text-white">:</span>
-          <span className="text-purple-400">~/dev</span>
-          <span className="text-white">$</span>
-          <motion.div 
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 1, repeat: Infinity }}
-            className="w-1.5 h-3 bg-green-400 ml-0.5"
-          />
-        </div>
+            {/* Cursor */}
+            <div className="flex items-center gap-1 mt-1">
+              <span className="text-blue-400">aditya@github</span>
+              <span className="text-white">:</span>
+              <span className="text-purple-400">~/dev</span>
+              <span className="text-white">$</span>
+              <motion.div 
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="w-1.5 h-3 bg-green-400 ml-0.5"
+              />
+            </div>
+          </>
+        )}
       </div>
     </motion.div>
   );
