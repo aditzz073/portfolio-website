@@ -20,6 +20,8 @@ const GitHubStatus = () => {
     showHelp: false
   });
 
+  const [isMinimized, setIsMinimized] = useState(false);
+
   const commandHistoryRef = React.useRef(null);
 
   // Auto-scroll to bottom when new commands are added
@@ -139,6 +141,10 @@ const GitHubStatus = () => {
       currentInput: '',
       showHelp: false
     }));
+  };
+
+  const toggleMinimize = () => {
+    setIsMinimized(prev => !prev);
   };
 
   useEffect(() => {
@@ -382,7 +388,9 @@ const GitHubStatus = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden max-h-[400px] flex flex-col z-40"
+      className={`fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden flex flex-col z-40 ${
+        isMinimized ? 'h-auto' : 'max-h-[400px]'
+      }`}
     >
       {/* Terminal Header */}
       <div className="bg-gray-800 border-b border-gray-700 px-3 py-1.5 flex items-center gap-2">
@@ -397,6 +405,7 @@ const GitHubStatus = () => {
           ></motion.div>
           <motion.div 
             whileHover={{ scale: 1.2 }}
+            onClick={toggleMinimize}
             className="w-2.5 h-2.5 bg-green-500 rounded-full cursor-pointer"
           ></motion.div>
         </div>
@@ -407,7 +416,46 @@ const GitHubStatus = () => {
       
       {/* Terminal Content */}
       <div className="p-3 bg-black text-green-400 text-xs leading-tight flex-1 overflow-y-auto min-h-0 overflow-x-hidden">
-        {!terminalState.isInteractive ? (
+        {isMinimized ? (
+          // Minimized View - Only Essential Info
+          <div className="space-y-1">
+            <div className="mb-2">
+              <span className="text-cyan-400">Working on:</span>
+              <motion.div
+                key={githubData.currentRepo}
+                initial={{ x: 5, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                className="text-white bg-gray-900 px-1.5 py-0.5 rounded mt-0.5 border-l border-purple-500 truncate"
+              >
+                → {githubData.currentRepo}
+              </motion.div>
+            </div>
+
+            <div className="flex justify-between">
+              <span className="text-blue-400">Commits today:</span>
+              <motion.span 
+                key={githubData.commitsToday}
+                initial={{ color: '#60A5FA', scale: 1.1 }}
+                animate={{ color: '#60A5FA', scale: 1 }}
+                className="text-blue-400 font-bold"
+              >
+                {githubData.commitsToday}
+              </motion.span>
+            </div>
+            
+            <div className="flex justify-between">
+              <span className="text-orange-400">Streak:</span>
+              <motion.span 
+                key={githubData.currentStreak}
+                initial={{ color: '#FB923C', scale: 1.1 }}
+                animate={{ color: '#FB923C', scale: 1 }}
+                className="text-orange-400 font-bold"
+              >
+                {githubData.currentStreak}d
+              </motion.span>
+            </div>
+          </div>
+        ) : !terminalState.isInteractive ? (
           // Default GitHub Status View
           <>
             {/* Command Prompt */}
@@ -600,7 +648,7 @@ const GitHubStatus = () => {
           </div>
         )}
 
-        {!terminalState.isInteractive && (
+        {!terminalState.isInteractive && !isMinimized && (
           <>
             {/* Compact Last Update */}
             <div className="pt-1 border-t border-gray-800">
