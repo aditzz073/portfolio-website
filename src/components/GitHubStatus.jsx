@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { GITHUB_CONFIG } from '../config/github';
 
 const GitHubStatus = () => {
@@ -21,6 +21,7 @@ const GitHubStatus = () => {
   });
 
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const commandHistoryRef = React.useRef(null);
 
@@ -145,6 +146,10 @@ const GitHubStatus = () => {
 
   const toggleMinimize = () => {
     setIsMinimized(prev => !prev);
+  };
+
+  const toggleCollapse = () => {
+    setIsCollapsed(prev => !prev);
   };
 
   useEffect(() => {
@@ -383,24 +388,95 @@ const GitHubStatus = () => {
     );
   }
 
+  // Collapsed Terminal Icon View
+  if (isCollapsed) {
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key="collapsed"
+          initial={{ scale: 0, opacity: 0, y: -20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0, opacity: 0, y: -20 }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 500, 
+            damping: 30,
+            duration: 0.4 
+          }}
+          onClick={toggleCollapse}
+          className="fixed top-20 right-4 w-16 h-16 bg-black rounded-lg shadow-2xl cursor-pointer z-40 flex items-center justify-center"
+          whileHover={{ 
+            scale: 1.1,
+            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5)"
+          }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {/* Terminal Icon */}
+          <div className="text-green-400">
+            <div className="relative">
+              {/* Terminal window representation */}
+              <div className="w-8 h-6 border border-green-400 rounded-sm relative bg-black/50">
+                <div className="absolute top-0.5 left-0.5 w-1 h-1 bg-red-400 rounded-full"></div>
+                <div className="absolute top-0.5 left-2 w-1 h-1 bg-yellow-400 rounded-full"></div>
+                <div className="absolute top-0.5 left-3.5 w-1 h-1 bg-green-400 rounded-full"></div>
+                <div className="absolute bottom-1 left-1 text-xs text-green-400">{'>'}</div>
+                <motion.div 
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute bottom-1 right-1 w-0.5 h-2 bg-green-400"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    );
+  }
+
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden flex flex-col z-40 ${
-        isMinimized ? 'h-auto' : 'max-h-[400px]'
-      }`}
-    >
+    <AnimatePresence mode="wait">
+      <motion.div 
+        key="expanded"
+        initial={{ 
+          scale: 0, 
+          opacity: 0, 
+          y: -20,
+          originX: 1,
+          originY: 0
+        }}
+        animate={{ 
+          scale: 1, 
+          opacity: 1, 
+          y: 0 
+        }}
+        exit={{ 
+          scale: 0, 
+          opacity: 0,
+          y: -20,
+          originX: 1,
+          originY: 0
+        }}
+        transition={{ 
+          type: "spring",
+          stiffness: 400,
+          damping: 25,
+          duration: 0.4
+        }}
+        className={`fixed top-20 right-4 bg-black border border-gray-700 rounded-lg shadow-2xl w-[280px] font-mono overflow-hidden flex flex-col z-40 ${
+          isMinimized ? 'h-auto' : 'max-h-[400px]'
+        }`}
+      >
       {/* Terminal Header */}
       <div className="bg-gray-800 border-b border-gray-700 px-3 py-1.5 flex items-center gap-2">
         <div className="flex gap-1.5">
           <motion.div 
             whileHover={{ scale: 1.2 }}
+            onClick={toggleCollapse}
             className="w-2.5 h-2.5 bg-red-500 rounded-full cursor-pointer"
           ></motion.div>
           <motion.div 
             whileHover={{ scale: 1.2 }}
+            onClick={toggleCollapse}
             className="w-2.5 h-2.5 bg-yellow-500 rounded-full cursor-pointer"
           ></motion.div>
           <motion.div 
@@ -687,6 +763,7 @@ const GitHubStatus = () => {
         )}
       </div>
     </motion.div>
+    </AnimatePresence>
   );
 };
 
