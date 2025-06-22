@@ -85,11 +85,11 @@ const Extracurricular = () => {
   const activities = [
     {
       title: "Team Lead",
-      organization: "Mudita",
+      organization: "Mudita, DSI",
       date: "Nov 2023 - Present",
       role: "Volunteer",
       description: "Event photographer capturing Team Mudita's community projects. From Valuable Vintage to Pawsitivity, spreading smiles and promoting ethics through my lens.",
-      technologies: ["Event Photography", "Community Projects", "Social Impact", "Visual Storytelling", "Adobe Creative Suite"],
+      technologies: ["Social media Management", "Community Projects", "Social Impact", "Visual Storytelling", "Adobe Creative Suite"],
       icon: mudita,
       iconBg: "#d97706"
     },
@@ -105,11 +105,11 @@ const Extracurricular = () => {
     },
     {
       title: "Technical Team Member",
-      organization: "Genesis",
+      organization: "Genesis, ISE",
       date: "Nov 2024 - Present",
       role: "Team Member",
-      description: "Contributing to technical initiatives and collaborative projects as part of the Genesis team, focusing on innovation and technical excellence.",
-      technologies: ["Team Collaboration", "Technical Development", "Project Management", "Innovation", "Problem Solving", "Leadership"],
+      description: "Organizing technical initiatives including Hackman (24hr Hackathon) and Catalysis (technical fest), focusing on event management while learning and innovating solutions for complex technical challenges.",
+      technologies: ["Event Management", "Technical Development", "Project Management", "Leadership"],
       icon: genesis,
       iconBg: "#7c3aed"
     }
