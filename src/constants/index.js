@@ -75,11 +75,9 @@ export const experiences = [
     iconBg: "#87CEEB",
     date: "Jan 2025 - May 2025",
     role: "Intern: Onsite",
-    description: `• Built responsive UIs using React, Vite, and Tailwind CSS
-• Implemented component-based architecture and effective state management
-• Integrated Framer Motion for smooth UI animations and transitions
-• Gained experience in full-stack workflows and interactive user experience design
-• Customized promotional website features for enhanced user engagement`,
+    description: `• Completed web development internship at FreeSip, focusing on B2B marketing platforms and building responsive UIs using React, Vite, and Tailwind CSS
+• Implemented component-based architecture with effective state management and integrated Framer Motion for smooth UI animations and transitions
+• Gained experience in full-stack workflows, interactive user experience design, and customized promotional website features for enhanced user engagement`,
     tags: ["React", "JavaScript", "Vite", "CSS", "Framer Motion"],
   },
   // {
