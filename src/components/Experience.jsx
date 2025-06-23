@@ -59,9 +59,9 @@ const ExperienceCard = ({ experience, index }) => (
       {/* Description - more compact */}
       {experience.description && (
         <div className="mb-4">
-          <p className="text-white-100 text-[14px] leading-[22px] text-justify">
+          <div className="text-white-100 text-[14px] leading-[22px] text-justify whitespace-pre-line">
             {experience.description}
-          </p>
+          </div>
         </div>
       )}
 
