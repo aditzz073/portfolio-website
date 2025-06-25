@@ -10,7 +10,6 @@
   <a href="#tech-stack">Tech Stack</a>
 </p>
 
-[![GitHub license](https://img.shields.io/github/license/aditzz073/Portfolio?style=flat-square)](LICENSE)
 [![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fportfolio-aditya.vercel.app)](https://portfolio-aditya.vercel.app)
 [![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=flat-square&logo=react)](https://reactjs.org)
 
@@ -25,22 +24,26 @@
 ```mermaid
 mindmap
   root((Portfolio Website))
-    User Interface
+    UI/UX
       Responsive Design
       Smooth Animations
-      Interactive 3D Elements
-    Sections
-      About Me
-      Experience
-      Projects
-      Contact
-    Technical Features
-      React with Vite
-      Tailwind CSS Styling
-      EmailJS Integration
-    Integrations
-       Email Contact
-      Project Showcase
+      3D Elements
+      Terminal Interface
+    Content
+      About & Skills
+      Experience & Projects
+      Extracurricular
+      Contact Form
+    GitHub Features
+      Live Status
+      Commit Tracking
+      Interactive Terminal
+    Tech Stack
+      React + Vite
+      Tailwind CSS
+      Framer Motion
+      Three.js
+      EmailJS
 ```
 
 </div>
@@ -87,7 +90,7 @@ npm run dev
       <img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
       <br>React
     </td>
-      <td align="center" width="96">
+    <td align="center" width="96">
       <img src="https://skillicons.dev/icons?i=vite" width="48" height="48" alt="Vite" />
       <br>Vite
     </td>
@@ -95,36 +98,42 @@ npm run dev
       <img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind CSS" />
       <br>Tailwind CSS
     </td>
-      <td align="center" width="96">
+    <td align="center" width="96">
       <img src="https://skillicons.dev/icons?i=threejs" width="48" height="48" alt="Three.js" />
       <br>Three.js
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=github" width="48" height="48" alt="GitHub API" />
+      <br>GitHub API
+    </td>
+    <td align="center" width="96">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" height="48" alt="EmailJS" />
+      <br>EmailJS
+    </td>
+    <td align="center" width="96">
+      <img src="https://user-images.githubusercontent.com/38039349/60953119-d3c6f300-a2fc-11e9-9596-4978e5d52180.png" width="48" height="48" alt="Framer Motion" />
+      <br>Framer Motion
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=vercel" width="48" height="48" alt="Vercel" />
+      <br>Vercel
     </td>
   </tr>
 </table>
 
 ## ⚡ Core Features
 
-- 📱 Responsive Design
+- 📱 **Responsive Design** - Mobile-first approach with seamless cross-device experience
 
-  - Mobile-first approach
-  - Seamless experience across all devices
-  - Adaptive layouts and components
+- 🖥️ **Interactive Terminal** - Live GitHub status with command-based navigation
 
-- 🎯 Dynamic Content
+- 🎯 **Dynamic Content** - Interactive project showcase and animated skill representations
 
-  - Interactive project showcase
-  - Engaging experience section
-  - Animated skill representations
+- 🎨 **Modern UI/UX** - Smooth animations, 3D elements, and intuitive navigation
 
-- 🎨 Modern UI/UX
-
-  - Smooth Framer Motion animations
-  - Intuitive navigation
-  - Clean and professional design
-  - Interactive 3D elements using Three.js
-
-- ✉️ Email Integration
-  - Contact form using EmailJS
+- ✉️ **Contact Integration** - Direct email functionality with EmailJS
 
 ## 📄 License
 
