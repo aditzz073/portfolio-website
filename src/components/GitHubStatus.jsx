@@ -14,7 +14,6 @@ const GitHubStatus = () => {
   });
 
   const [terminalState, setTerminalState] = useState({
-    isInteractive: false,
     currentInput: '',
     commandHistory: [],
     showHelp: false
@@ -133,15 +132,6 @@ const GitHubStatus = () => {
         }));
       }
     }
-  };
-
-  const toggleInteractive = () => {
-    setTerminalState(prev => ({ 
-      ...prev, 
-      isInteractive: !prev.isInteractive,
-      currentInput: '',
-      showHelp: false
-    }));
   };
 
   const toggleMinimize = () => {
@@ -531,8 +521,8 @@ const GitHubStatus = () => {
               </motion.span>
             </div>
           </div>
-        ) : !terminalState.isInteractive ? (
-          // Default GitHub Status View
+        ) : (
+          // Main GitHub Status View with Integrated Terminal
           <>
             {/* Command Prompt */}
             <div className="flex items-center gap-1 mb-2">
@@ -634,24 +624,10 @@ const GitHubStatus = () => {
               </motion.a>
             </div>
 
-            {/* Interactive Mode Toggle */}
-            <div className="mb-2">
-              <motion.button
-                onClick={toggleInteractive}
-                whileHover={{ x: 2 }}
-                className="text-cyan-400 hover:text-cyan-300 cursor-pointer"
-              >
-                <span className="text-white">→</span> explore website
-              </motion.button>
-            </div>
-          </>
-        ) : (
-          // Interactive Command Interface
-          <div className="flex flex-col h-full">
             {/* Command History - Scrollable Area */}
             <div 
               ref={commandHistoryRef}
-              className="flex-1 overflow-y-auto mb-2 max-h-[200px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden"
+              className="flex-1 overflow-y-auto mb-2 max-h-[120px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden"
             >
               {terminalState.commandHistory.map((entry, index) => (
                 <div key={index} className="mb-1 break-words">
@@ -691,10 +667,9 @@ const GitHubStatus = () => {
               )}
             </div>
 
-            {/* Fixed Input Area */}
+            {/* Command Input */}
             <div className="border-t border-gray-800 pt-2">
-              {/* Command Input */}
-              <div className="flex items-center gap-1 mb-2">
+              <div className="flex items-center gap-1">
                 <div className="flex items-center gap-1 flex-shrink-0">
                   <span className="text-blue-400">aditya@portfolio</span>
                   <span className="text-white">:</span>
@@ -711,53 +686,6 @@ const GitHubStatus = () => {
                   autoFocus
                 />
               </div>
-
-              {/* Back to Status */}
-              <motion.button
-                onClick={toggleInteractive}
-                whileHover={{ x: 2 }}
-                className="text-yellow-400 hover:text-yellow-300 cursor-pointer"
-              >
-                <span className="text-white">←</span> back to git status
-              </motion.button>
-            </div>
-          </div>
-        )}
-
-        {!terminalState.isInteractive && !isMinimized && (
-          <>
-            {/* Compact Last Update */}
-            <div className="pt-1 border-t border-gray-800">
-              <div className="flex items-center gap-1 text-gray-500">
-                <motion.span 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="text-xs"
-                >
-                  ⟳
-                </motion.span>
-                <span className="text-xs">
-                  {githubData.lastUpdated && 
-                    githubData.lastUpdated.toLocaleTimeString([], { 
-                      hour: '2-digit', 
-                      minute: '2-digit'
-                    })
-                  }
-                </span>
-              </div>
-            </div>
-
-            {/* Cursor */}
-            <div className="flex items-center gap-1 mt-1">
-              <span className="text-blue-400">aditya@github</span>
-              <span className="text-white">:</span>
-              <span className="text-purple-400">~/dev</span>
-              <span className="text-white">$</span>
-              <motion.div 
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="w-1.5 h-3 bg-green-400 ml-0.5"
-              />
             </div>
           </>
         )}
