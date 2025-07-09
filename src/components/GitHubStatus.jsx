@@ -20,7 +20,7 @@ const GitHubStatus = () => {
   });
 
   const [isMinimized, setIsMinimized] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const commandHistoryRef = React.useRef(null);
 

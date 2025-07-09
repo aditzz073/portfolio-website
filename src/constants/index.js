@@ -163,29 +163,29 @@ export const projects = [
     image: kisansetu,
     source_code_link: "https://github.com/slashexx/kisansetu",
   },
-  {
-    name: "CompileVortex",
-    description:
-      "Tool to automate payload creation using the Metasploit framework",
-    tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "CSS", color: "green-text-gradient" },
-      { name: "HTML", color: "pink-text-gradient" },
-    ],
-    image: CompileVortex,
-    source_code_link: "https://github.com/aditzz073/CompileVortex",
-  },
-  {
-    name: "Sketcher",
-    description:
-      "Convert an input image to a pencil sketch using OpenCV and Matplotlib libraries.",
-    tags: [
-      { name: "OpenCV", color: "blue-text-gradient" },
-      { name: "Matplotlib", color: "green-text-gradient" },
-      { name: "Python", color: "pink-text-gradient" },
-    ],
+  // {
+  //   name: "CompileVortex",
+  //   description:
+  //     "Tool to automate payload creation using the Metasploit framework",
+  //   tags: [
+  //     { name: "Javascript", color: "blue-text-gradient" },
+  //     { name: "CSS", color: "green-text-gradient" },
+  //     { name: "HTML", color: "pink-text-gradient" },
+  //   ],
+  //   image: CompileVortex,
+  //   source_code_link: "https://github.com/aditzz073/CompileVortex",
+  // },
+  // {
+  //   name: "Sketcher",
+  //   description:
+  //     "Convert an input image to a pencil sketch using OpenCV and Matplotlib libraries.",
+  //   tags: [
+  //     { name: "OpenCV", color: "blue-text-gradient" },
+  //     { name: "Matplotlib", color: "green-text-gradient" },
+  //     { name: "Python", color: "pink-text-gradient" },
+  //   ],
 
-    image: sketcher,
-    source_code_link: "https://github.com/aditzz073/Image_to_Pencil_Sketch_App",
-  },
+  //   image: sketcher,
+  //   source_code_link: "https://github.com/aditzz073/Image_to_Pencil_Sketch_App",
+  // },
 ];
