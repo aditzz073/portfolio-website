@@ -140,6 +140,33 @@ const Extracurricular = () => {
         ))}
       </div>
 
+      {/* Photography Profile Link */}
+      <motion.div 
+        variants={fadeIn("up", "spring", 0.3, 0.75)}
+        className="mt-20 text-center"
+      >
+        <div className="relative inline-block group">
+          <p className="text-white/80 text-lg font-light tracking-wide mb-4 hover:text-white transition-colors duration-500">
+            Check out my photography profile at 
+            <span className="italic font-medium text-violet-400/90"> 500px</span>
+          </p>
+          <a 
+            href="https://500px.com/p/adityaaa073"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative inline-block group"
+          >
+            <span className="text-gray-300 text-3xl font-bold italic tracking-wide hover:scale-110 hover:text-white transition-all duration-500 cursor-pointer relative">
+              adityaaa073
+            </span>
+            {/* Subtle underline animation */}
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 group-hover:w-full transition-all duration-700 ease-out"></div>
+            {/* Floating sparkle effect */}
+            <div className="absolute -top-2 -right-2 w-2 h-2 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300"></div>
+          </a>
+        </div>
+      </motion.div>
+
       {/* Floating particles effect */}
       <div className="absolute top-10 right-10 w-2 h-2 bg-violet-400 rounded-full animate-bounce opacity-60"></div>
       <div className="absolute bottom-20 left-10 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
