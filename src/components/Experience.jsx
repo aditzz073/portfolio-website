@@ -67,14 +67,14 @@ const ExperienceCard = ({ experience, index }) => (
 
       {/* Points */}
       {experience.points && experience.points.length > 0 && (
-        <ul className="mt-3 mb-4 space-y-2">
+        <ul className="mt-3 mb-4 space-y-3">
           {experience.points.map((point, pointIndex) => (
             <li
               key={`experience-point-${pointIndex}`}
-              className="text-white-100 text-[13px] leading-[20px] flex items-start"
+              className="text-white-100 text-[13px] leading-[20px] flex items-start pl-1"
             >
-              <span className="text-[#915EFF] mr-2 mt-1 text-[8px]">▶</span>
-              {point}
+              <span className="text-[#4FC3F7] mr-3 mt-1 text-[10px] font-bold flex-shrink-0">●</span>
+              <span className="flex-1">{point}</span>
             </li>
           ))}
         </ul>

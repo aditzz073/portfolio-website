@@ -13,15 +13,13 @@ import {
   docker,
   flask,
   mysql,
-  edunet,
   freesip,
   freesiplogo,
   embereye,
   kisansetu,
   threejs,
   trashview,
-  sketcher,
-  CompileVortex,
+  spaceinvaders,
 } from "../assets";
 
 export const navLinks = [
@@ -75,9 +73,11 @@ export const experiences = [
     iconBg: "#87CEEB",
     date: "Jan 2025 - May 2025",
     role: "Intern: Onsite",
-    description: `• Completed web development internship at FreeSip, focusing on B2B marketing platforms and building responsive UIs using React, Vite, and Tailwind CSS
-• Implemented component-based architecture with effective state management and integrated Framer Motion for smooth UI animations and transitions
-• Gained experience in full-stack workflows, interactive user experience design, and customized promotional website features for enhanced user engagement`,
+    points: [
+      "Completed web development internship at FreeSip, focusing on B2B marketing platforms and building responsive UIs using React, Vite, and Tailwind CSS.",
+      "Implemented component-based architecture with effective state management and integrated Framer Motion for smooth UI animations and transitions.",
+      "Gained experience in full-stack workflows, interactive user experience design, and customized promotional website features for enhanced user engagement."
+    ],
     tags: ["React", "JavaScript", "Vite", "CSS", "Framer Motion"],
   },
   // {
@@ -163,18 +163,18 @@ export const projects = [
     image: kisansetu,
     source_code_link: "https://github.com/slashexx/kisansetu",
   },
-  // {
-  //   name: "CompileVortex",
-  //   description:
-  //     "Tool to automate payload creation using the Metasploit framework",
-  //   tags: [
-  //     { name: "Javascript", color: "blue-text-gradient" },
-  //     { name: "CSS", color: "green-text-gradient" },
-  //     { name: "HTML", color: "pink-text-gradient" },
-  //   ],
-  //   image: CompileVortex,
-  //   source_code_link: "https://github.com/aditzz073/CompileVortex",
-  // },
+  {
+    name: "Space Invaders",
+    description:
+      "A modern, visually enhanced version of the classic Space Invaders arcade game featuring neon aesthetics, particle effects, and smooth gameplay mechanics.",
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "Pygame", color: "green-text-gradient" },
+      { name: "Math lib", color: "pink-text-gradient" },
+    ],
+    image: spaceinvaders,
+    source_code_link: "https://github.com/aditzz073/space-invaders",
+  },
   // {
   //   name: "Sketcher",
   //   description:
@@ -184,7 +184,6 @@ export const projects = [
   //     { name: "Matplotlib", color: "green-text-gradient" },
   //     { name: "Python", color: "pink-text-gradient" },
   //   ],
-
   //   image: sketcher,
   //   source_code_link: "https://github.com/aditzz073/Image_to_Pencil_Sketch_App",
   // },

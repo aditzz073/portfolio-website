@@ -1,5 +1,4 @@
 // Import company logos
-import edunet from "./company/edunet.png";
 import iskcon from "./company/iskcon.jpeg";
 import mudita from "./company/mudita.jpeg";
 import genesis from "./company/genesis.png";
@@ -16,8 +15,7 @@ import freesip from "./projects/Freesip.png";
 import embereye from "./projects/embereye.png";
 import kisansetu from "./projects/kisansetu.png";
 import trashview from "./projects/trashview.png";
-import sketcher from "./projects/sketcher.png";
-import CompileVortex from "./projects/CompileVortex.png";
+import spaceinvaders from "./projects/spaceinvaders.png";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -40,7 +38,6 @@ import close from "./close.svg";
 import externalLink from "./external-link.svg";
 
 export {
-  edunet,
   iskcon,
   mudita,
   genesis,
@@ -65,8 +62,7 @@ export {
   embereye,
   kisansetu,
   trashview,
-  sketcher,
-  CompileVortex,
+  spaceinvaders,
   logo,
   menu,
   close,
