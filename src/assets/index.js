@@ -1,6 +1,6 @@
 // Import company logos
 import iskcon from "./company/iskcon.jpeg";
-import mudita from "./company/mudita.jpeg";
+import mudita from "./company/Mudita.jpeg";
 import genesis from "./company/genesis.png";
 import freesiplogo from "./company/freesiplogo.png";
 
