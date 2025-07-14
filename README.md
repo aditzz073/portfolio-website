@@ -50,7 +50,7 @@ mindmap
 
 ## 🚀 Demo
 
-Experience the live portfolio at [https://portfolio-aditya.vercel.app](https://portfolio-aditya.vercel.app)
+Experience the live portfolio at [https://adityapujer.xyz](https://adityapujer.xyz)
 
 ## 🛠️ Installation
 
