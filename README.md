@@ -10,7 +10,7 @@
   <a href="#tech-stack">Tech Stack</a>
 </p>
 
-[![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fportfolio-aditya.vercel.app)](https://portfolio-aditya.vercel.app)
+[![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fadityapujer.xyz)](https://adityapujer.xyz)
 [![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=flat-square&logo=react)](https://reactjs.org)
 
 <p align="center">A modern, responsive portfolio website showcasing professional experience, projects, and skills. Built with React, Vite, and Tailwind CSS, featuring smooth animations and interactive 3D elements. ✨</p>
@@ -50,7 +50,7 @@ mindmap
 
 ## 🚀 Demo
 
-Experience the live portfolio at [https://portfolio-aditya.vercel.app](https://portfolio-aditya.vercel.app)
+Experience the live portfolio at [https://adityapujer.xyz](https://adityapujer.xyz)
 
 ## 🛠️ Installation
 
