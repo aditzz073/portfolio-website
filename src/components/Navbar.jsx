@@ -167,18 +167,20 @@ const Navbar = () => {
             
             {/* Mobile menu toggle */}
             <div className="sm:hidden flex items-center">
-              <img
-                src={toggle ? close : menu}
-                alt="menu"
-                className="w-[28px] h-[18px] object-contain cursor-pointer"
-                onClick={() => setToggle(!toggle)}
-              />
+              <div className="p-2 bg-gradient-to-br from-slate-800/60 to-purple-900/40 backdrop-blur-md rounded-lg border border-purple-500/10 hover:from-slate-700/70 hover:to-purple-800/50 transition-all duration-300 shadow-lg shadow-purple-900/10">
+                <img
+                  src={toggle ? close : menu}
+                  alt="menu"
+                  className="w-[28px] h-[18px] object-contain cursor-pointer"
+                  onClick={() => setToggle(!toggle)}
+                />
+              </div>
             </div>
           </div>
           
           {/* Mobile menu dropdown */}
           <div
-            className={`p-4 black-gradient absolute top-14 right-0 mx-2 my-2 min-w-[120px] z-10 rounded-xl foggy-glass ${
+            className={`p-4 bg-gradient-to-br from-slate-800/70 to-purple-900/50 backdrop-blur-md absolute top-14 right-0 mx-2 my-2 min-w-[120px] z-50 rounded-xl border border-purple-500/15 shadow-xl shadow-purple-900/20 ${
               toggle ? 'flex' : 'hidden'
             } sm:hidden`}
           >
