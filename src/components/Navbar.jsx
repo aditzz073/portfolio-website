@@ -9,10 +9,6 @@ const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
 
-  const toggleResume = () => {
-    const resumeUrl = '/Resume.pdf';
-    window.open(resumeUrl);
-  };
 
   useEffect(() => {
     if (toggle) {
@@ -40,11 +36,22 @@ const Navbar = () => {
           </li>
         ))}
         <li
-          className={`text-${
-            isSecondary ? 'secondary' : 'white'
+          className={`${
+            isSecondary ? 'text-secondary' : 'text-white'
           } hover:text-white text-[20px] font-medium cursor-pointer`}
+          onClick={() => {
+            if (isSecondary) {
+              setToggle(false);
+            }
+          }}
         >
-          <button onClick={toggleResume}>Resume</button>
+          <a
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </li>
       </ul>
       
