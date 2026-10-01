@@ -16,6 +16,9 @@ import embereye from "./projects/embereye.png";
 import kisansetu from "./projects/kisansetu.png";
 import trashview from "./projects/trashview.png";
 import spaceinvaders from "./projects/spaceinvaders.png";
+import scopuz from "./projects/scopuz.jpg";
+import decisioncopilot from "./projects/decisioncopilot.png";
+import facultyappraisal from "./projects/facultyappraisal.png";
 
 // Import tech logos
 import css from "./tech/css.png";
@@ -63,6 +66,9 @@ export {
   kisansetu,
   trashview,
   spaceinvaders,
+  scopuz,
+  decisioncopilot,
+  facultyappraisal,
   logo,
   menu,
   close,
