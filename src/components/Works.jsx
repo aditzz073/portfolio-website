@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ name, description, tags, image, source_code_link, demo_link, darkIcons }) => {
+const ProjectCard = ({ name, label, description, tags, image, source_code_link, demo_link, darkIcons }) => {
   return (
     <motion.div variants={fadeIn("up", "spring")}>
       <Tilt
@@ -17,50 +17,61 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, demo_li
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between h-full"
       >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
-          />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div className="flex flex-col gap-2">
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
-                className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform`}
-              >
-                <img 
-                  src={github} 
-                  alt="source code" 
-                  className="w-1/2 h-1/2 object-contain" 
-                  style={darkIcons ? {filter: 'invert(1)'} : {}}
-                />
+        <div>
+          <div className="relative w-full h-[230px]">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div className="flex flex-col gap-2">
+                {source_code_link && (
+                  <div
+                    onClick={() => window.open(source_code_link, "_blank")}
+                    className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform`}
+                    title="Source Code"
+                  >
+                    <img 
+                      src={github} 
+                      alt="source code" 
+                      className="w-1/2 h-1/2 object-contain" 
+                      style={darkIcons ? {filter: 'invert(1)'} : {}}
+                    />
+                  </div>
+                )}
+                {demo_link && (
+                  <div
+                    onClick={() => window.open(demo_link, "_blank")}
+                    className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all hover:scale-110`}
+                    title="Live Demo"
+                  >
+                    <img 
+                      src={externalLink} 
+                      alt="demo link" 
+                      className="w-1/2 h-1/2 object-contain" 
+                      style={darkIcons ? {} : {filter: 'invert(1)'}}
+                    />
+                  </div>
+                )}
               </div>
-              {demo_link && (
-                <div
-                  onClick={() => window.open(demo_link, "_blank")}
-                  className={`${darkIcons ? 'bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30' : 'bg-black bg-opacity-20 backdrop-blur-sm border border-gray-500 border-opacity-30'} w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all hover:scale-110`}
-                >
-                  <img 
-                    src={externalLink} 
-                    alt="demo link" 
-                    className="w-1/2 h-1/2 object-contain" 
-                    style={darkIcons ? {} : {filter: 'invert(1)'}}
-                  />
-                </div>
-              )}
             </div>
           </div>
+          <div className="mt-5">
+            <h3 className="text-white font-bold text-[22px] leading-tight">{name}</h3>
+            {label && (
+              <span className="inline-block mt-2 px-2.5 py-0.5 text-[11px] font-semibold bg-violet-600/20 text-violet-300 border border-violet-500/30 rounded-full">
+                {label}
+              </span>
+            )}
+            <p className="mt-2 text-secondary text-[14px] leading-relaxed">{description}</p>
+          </div>
         </div>
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 pt-2">
           {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+            <p key={tag.name} className={`text-[13px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
