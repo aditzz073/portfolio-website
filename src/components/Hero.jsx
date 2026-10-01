@@ -26,20 +26,26 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Aditya</span>
+            Hi, I'm <span className="text-[#915EFF]">Aditya Pujer</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I do
-            <Typewriter
-              options={{
-                strings: ["Full Stack Development", "AI & ML", "NLP", "Photography"],
-                autoStart: true,
-                loop: true,
-                loopCount: Infinity,
-                deleteSpeed: "natural",
-                pauseFor: 1000,
-              }}
-            />
+          <p className={`${styles.heroSubText} mt-2 text-white-100 flex flex-wrap items-center gap-2`}>
+            <span>I'm a</span>
+            <span className="text-[#915EFF] inline-block">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Full-Stack Engineer",
+                    "AI Systems Builder",
+                    "Backend Developer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  loopCount: Infinity,
+                  deleteSpeed: "natural",
+                  pauseFor: 1200,
+                }}
+              />
+            </span>
           </p>
         </div>
       </div>

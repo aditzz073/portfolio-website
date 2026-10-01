@@ -26,13 +26,13 @@ const ExperienceCard = ({ experience, index }) => (
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-3">
           <div 
-            className="w-12 h-12 rounded-[8px] flex items-center justify-center shadow-sm"
+            className="w-12 h-12 rounded-[8px] flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0"
             style={{ backgroundColor: experience.iconBg }}
           >
             <img
               src={experience.icon}
               alt={experience.company_name}
-              className="w-7 h-7 object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
           <div>

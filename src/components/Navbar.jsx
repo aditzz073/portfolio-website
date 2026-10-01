@@ -69,7 +69,7 @@ const Navbar = () => {
             <FaGithub size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/aditya-your-profile"
+            href="https://www.linkedin.com/in/aditya-pujer/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-white transition-colors duration-300 p-2 hover:bg-gray-800 rounded-full"
@@ -79,7 +79,7 @@ const Navbar = () => {
             <FaLinkedinIn size={20} />
           </a>
           <a
-            href="https://instagram.com/aditzz073"
+            href="https://www.instagram.com/adityaaa073/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:text-white transition-colors duration-300 p-2 hover:bg-gray-800 rounded-full"
